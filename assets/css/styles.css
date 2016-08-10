@@ -1,0 +1,14 @@
+#header {
+	text-align: center;
+	font-size: 50px;
+}
+
+#listedSports {
+	border: 1px solid black;
+	padding: 90px;
+	background-image: url(sport.jpeg);
+}
+
+#sportsForm {
+	text-align: center;
+}
