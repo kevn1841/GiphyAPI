@@ -39,7 +39,9 @@ function clicking() {
             document.getElementById("img"+ i).setAttribute("height", "200px")
             document.getElementById("img"+ i).setAttribute("width", "200px")
             document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
-}});
+            document.getElementById("img"+ i).setAttribute("title", results[i].rating);
+            document.getElementById("h2").style.visibility="visible";
+}})
     })
 
  };
@@ -53,7 +55,13 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
-    })
+         for(i=0;i<results.length;i++){
+            document.getElementById("img"+ i).setAttribute("height", "200px")
+            document.getElementById("img"+ i).setAttribute("width", "200px")
+            document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
+            document.getElementById("img"+ i).setAttribute("title", results[i].rating);
+            document.getElementById("h2").style.visibility="visible";
+    }})
 })
 
       $("#Soccer").click(function(){
@@ -65,7 +73,13 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
-    })
+         for(i=0;i<results.length;i++){
+            document.getElementById("img"+ i).setAttribute("height", "200px")
+            document.getElementById("img"+ i).setAttribute("width", "200px")
+            document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
+            document.getElementById("img"+ i).setAttribute("title", results[i].rating);
+            document.getElementById("h2").style.visibility="visible";
+    }})
 })
 
        $("#Baseball").click(function(){
@@ -77,7 +91,13 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
-    })
+         for(i=0;i<results.length;i++){
+            document.getElementById("img"+ i).setAttribute("height", "200px")
+            document.getElementById("img"+ i).setAttribute("width", "200px")
+            document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
+            document.getElementById("img"+ i).setAttribute("title", results[i].rating);
+            document.getElementById("h2").style.visibility="visible";
+    }});
 })
 
         $("#Tennis").click(function(){
@@ -93,6 +113,8 @@ function clicking() {
             document.getElementById("img"+ i).setAttribute("height", "200px")
             document.getElementById("img"+ i).setAttribute("width", "200px")
             document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
+            document.getElementById("img"+ i).setAttribute("title", results[i].rating);
+            document.getElementById("h2").style.visibility="visible";
         }
     })
 })
@@ -110,13 +132,19 @@ function newButton(){
         console.log(Sports);
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + Sports[0] + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-    $.ajax({url: queryURL, method: 'GET'})
-     .done(function(response) {
-         var results = response.data;
-         console.log(results);
-        Sports = [];
+            $.ajax({url: queryURL, method: 'GET'})
+             .done(function(response) {
+                 var results = response.data;
+                 console.log(results);
+                 for(i=0;i<results.length;i++){
+                    document.getElementById("img"+ i).setAttribute("height", "200px")
+                    document.getElementById("img"+ i).setAttribute("width", "200px")
+                    document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
+                    document.getElementById("img"+ i).setAttribute("title", results[i].rating);
+                    document.getElementById("h2").style.visibility="visible";
+                Sports = [];
 
-    })      
-})
-}
+            }});      
+        })
+        }
 clicking();
