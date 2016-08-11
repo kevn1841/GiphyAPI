@@ -35,7 +35,11 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
-})
+         for(i=0;i<results.length;i++){
+            document.getElementById("img"+ i).setAttribute("height", "200px")
+            document.getElementById("img"+ i).setAttribute("width", "200px")
+            document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
+}});
     })
 
  };
@@ -85,7 +89,11 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
-         document.getElementById("img1").setAttribute("src", "https://media.giphy.com/media/" + "l0MYxeCf4TTPFAfLi" + "/giphy.gif")
+         for(i=0;i<results.length;i++){
+            document.getElementById("img"+ i).setAttribute("height", "200px")
+            document.getElementById("img"+ i).setAttribute("width", "200px")
+            document.getElementById("img"+ i).setAttribute("src", "https://media.giphy.com/media/" + results[i].id + "/giphy.gif")
+        }
     })
 })
 
