@@ -35,6 +35,12 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
+         for(i=0;i<results.length;i++){
+            var b = $('<img>')
+            b.attr('src', response.data[i]);
+            $("#sportGifs").append(b);
+
+}
     })
 
  });
@@ -96,10 +102,17 @@ function newButton(){
     $("#" + newInput).click(function(){
         console.log("You justt clicked " + newInput)
         Sports.push(newInput);
+        // console.log(Sports[0]);
         console.log(Sports);
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + Sports[0] + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+    $.ajax({url: queryURL, method: 'GET'})
+     .done(function(response) {
+         var results = response.data;
+         console.log(results);
         Sports = [];
 
     })      
+})
 }
-
 clicking();
