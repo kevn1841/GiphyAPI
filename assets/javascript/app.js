@@ -1,29 +1,54 @@
-var Sports = ["Basketball", "Football", "Soccer", "Baseball", "Tennis", "Golf"];
+var Sports = ["Basketball", "Football", "Soccer", "Baseball", "Tennis"];
 
-var a;
+var newSport;
 
 function loadSportButtons(){
      for (i=0;i<Sports.length;i++){
-            a = $('<button>')
-            a.text(Sports[i]);
-            $(listedSports).append(a);
-        }
+        var a = $('<button>')
+        a.text(Sports[i])
+        $("#listedSports").append(a);
+        a.attr('id', Sports[i]);
+        
+    }
+     clicking();
+     Sports = [];
 }
 
 loadSportButtons()
 
 $('#submit').on('click', function(){
-    var newSport = document.getElementById('userInput').value;
-    Sports = [];
+    newSport = document.getElementById('userInput').value;
     Sports.push(newSport);
     loadSportButtons();
     console.log(Sports);
 });
 
-$("a").click(function(){
-    console.log(a[i]);
-})
+function clicking() {
+    $("#Basketball").click(function(){
+        console.log("You just clicked basketball")
+    })
 
-$('button').on('click', function(){
-    console.log(a);
-});
+     $("#Football").click(function(){
+        console.log("You just clicked Football")
+    })
+
+      $("#Soccer").click(function(){
+        console.log("You just clicked Soccer")
+    })
+
+       $("#Baseball").click(function(){
+        console.log("You just clicked Baseball")
+    })
+
+        $("#Tennis").click(function(){
+        console.log("You just clicked Tennis")
+    })
+    newButton();
+
+}
+function newButton(){
+    var newInput = document.getElementById("userInput").value;
+    $("#" + newInput).click(function(){
+        console.log("You just clicked " + newInput)
+    })
+}
