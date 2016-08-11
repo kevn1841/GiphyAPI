@@ -35,15 +35,10 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
-         for(i=0;i<results.length;i++){
-            var b = $('<img>')
-            b.attr('src', response.data[i]);
-            $("#sportGifs").append(b);
-
-}
+})
     })
 
- });
+ };
 
      $("#Football").click(function(){
         console.log("You just clicked Football")
@@ -90,11 +85,12 @@ function clicking() {
      .done(function(response) {
          var results = response.data;
          console.log(results);
+         document.getElementById("img1").setAttribute("src", "https://media.giphy.com/media/" + "l0MYxeCf4TTPFAfLi" + "/giphy.gif")
     })
 })
 
 
-}
+
 function newButton(){
     Sports = [];
     var newInput = document.getElementById("userInput").value;
