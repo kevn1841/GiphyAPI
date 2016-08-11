@@ -12,7 +12,6 @@ function loadSportButtons(){
         
     }
     newButton();
-    Sports = [];
 }
 
 loadSportButtons()
@@ -22,6 +21,8 @@ $('#submit').on('click', function(){
     newSport = newSport.replace( /\s/g, ""); 
     Sports.push(newSport);
     loadSportButtons();
+    Sports = [];
+    // console.log("You just added "+newSport)
 });
 
 function clicking() {
@@ -41,7 +42,7 @@ function clicking() {
      $("#Football").click(function(){
         console.log("You just clicked Football")
         
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "basketball" + "&api_key=dc6zaTOxFJmzC&limit=10";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "football" + "&api_key=dc6zaTOxFJmzC&limit=10";
 
     $.ajax({url: queryURL, method: 'GET'})
      .done(function(response) {
@@ -53,47 +54,52 @@ function clicking() {
       $("#Soccer").click(function(){
         console.log("You just clicked Soccer")
         
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "basketball" + "&api_key=dc6zaTOxFJmzC&limit=10";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "soccer" + "&api_key=dc6zaTOxFJmzC&limit=10";
 
     $.ajax({url: queryURL, method: 'GET'})
      .done(function(response) {
          var results = response.data;
          console.log(results);
     })
-    })
+})
 
        $("#Baseball").click(function(){
         console.log("You just clicked Baseball")
         
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "basketball" + "&api_key=dc6zaTOxFJmzC&limit=10";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "Baseball" + "&api_key=dc6zaTOxFJmzC&limit=10";
 
     $.ajax({url: queryURL, method: 'GET'})
      .done(function(response) {
          var results = response.data;
          console.log(results);
     })
-    })
+})
 
         $("#Tennis").click(function(){
         console.log("You just clicked Tennis")
         
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "basketball" + "&api_key=dc6zaTOxFJmzC&limit=10";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + "tennis" + "&api_key=dc6zaTOxFJmzC&limit=10";
 
     $.ajax({url: queryURL, method: 'GET'})
      .done(function(response) {
          var results = response.data;
          console.log(results);
     })
-    })
+})
 
 
 }
 function newButton(){
+    Sports = [];
     var newInput = document.getElementById("userInput").value;
     newInput = newInput.replace( /\s/g, ""); 
     $("#" + newInput).click(function(){
-        console.log("You just clicked " + newInput)
-    })
+        console.log("You justt clicked " + newInput)
+        Sports.push(newInput);
+        console.log(Sports);
+        Sports = [];
+
+    })      
 }
 
 clicking();
